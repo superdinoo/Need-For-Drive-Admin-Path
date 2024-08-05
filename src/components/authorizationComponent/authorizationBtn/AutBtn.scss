@@ -1,0 +1,55 @@
+.btnContainerAut {
+  display: flex;
+  justify-content: space-between;
+  width: 356px;
+  height: 29px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.firstBtnContainerAut,
+.secondBtnContainerAut {
+  height: 100%;
+}
+
+.firstBtnAut {
+  font-size: 10.5px;
+  border: none;
+  background: none;
+  color: #007bff;
+  cursor: pointer;
+  transition: filter 0.2s ease;
+}
+
+.firstBtnAut:hover {
+  filter: brightness(90%);
+}
+
+.secondBtnContainerAut {
+  width: 110px;
+}
+
+.secondBtnAut {
+  width: 100%;
+  height: 100%;
+  font-size: 14px;
+  border: 0.5px solid #007bff;
+  background-color: #007bff;
+  color: #ffffff;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: filter 0.2s ease;
+}
+
+.secondBtnAut:hover {
+  filter: brightness(90%);
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .firstBtnContainerAut {
+    width: 300px;
+  }
+  .btnContainerAut {
+    width: 280px;
+  }
+}

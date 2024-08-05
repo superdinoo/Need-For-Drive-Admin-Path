@@ -1,0 +1,85 @@
+.formContainerAut {
+  width: 376.5px;
+  height: auto;
+  background-color: #ffffff;
+  border-radius: 6px;
+  box-shadow:
+    0px 3.5px 35px 0px #5a61691a,
+    0px 5px 5px 0px #5a61690f,
+    0px 2px 4px 0px #5a61691f,
+    0px 1px 0px 0px #5a61691c;
+}
+
+.mainElementForm {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logoTxtMainElementForm {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.txtLogoMain {
+  font-size: 17.5px;
+}
+
+.containerInputAutRegister {
+  width: 341.5px;
+  height: 114px;
+  display: flex;
+  flex-direction: column;
+}
+
+.containerInputAutRegister {
+  height: 70px;
+}
+
+.settingAutTitle {
+  width: 100%;
+}
+
+.titleInputAut,
+.errorAut {
+  font-size: 10.5px;
+}
+
+.inputWrapperReg {
+  width: 341.5px;
+  height: 19px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.inputOptionsAut {
+  width: 100%;
+  height: 100%;
+  border: 0.5px solid #becad6;
+}
+
+.errorAut {
+  color: rgb(207, 0, 0);
+}
+
+.eyeStyle {
+  position: absolute;
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .formContainerAut {
+    width: 300px;
+  }
+  .containerInputAutRegister {
+    width: 260px;
+  }
+
+  .inputWrapperReg {
+    width: 100%;
+  }
+}
