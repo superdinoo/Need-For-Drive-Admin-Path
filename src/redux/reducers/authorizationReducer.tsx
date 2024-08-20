@@ -8,7 +8,6 @@ const initialState = {
 
 const authorizationReducer = createReducer(initialState, (builder) => {
   builder.addCase(setAuthorization, (state, action) => {
-    console.log(action)
     return {
       ...state,
       eMail: action.payload.eMail,

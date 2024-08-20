@@ -1,9 +1,8 @@
 import { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import setAuthorization from '../../../redux/actions/setAuthorization'
-import { OptionsAut } from '../../../interface/interface'
 
-const useAuthorization = ({ name, value }: OptionsAut) => {
+const useAuthorization = () => {
   const dispatch = useDispatch()
   const [autData, setAutData] = useState({
     eMail: '',
@@ -26,11 +25,6 @@ const useAuthorization = ({ name, value }: OptionsAut) => {
     }
   }
 
-  const errorEMail =
-    (name === 'eMail' && !value.includes('@')) || value.length == 0
-
-  const errorPassword = name === 'password' && value.length === 0 && !errorEMail
-
   useEffect(() => {
     dispatch(
       setAuthorization({
@@ -45,8 +39,6 @@ const useAuthorization = ({ name, value }: OptionsAut) => {
     handleInputAutData,
     autData,
     eyeOpen,
-    errorEMail,
-    errorPassword,
   }
 }
 

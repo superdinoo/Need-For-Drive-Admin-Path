@@ -6,7 +6,7 @@ import AutBtn from '../authorizationBtn/AutBtn'
 
 const AutRegister: React.FC = () => {
   const { handleEyeOpen, handleInputAutData, autData, eyeOpen } =
-    useAuthorization({ name: '', value: '' })
+    useAuthorization()
 
   return (
     <div className="formContainerAut">

@@ -2,7 +2,6 @@ import React from 'react'
 import { EyeInvisibleOutlined, EyeOutlined } from '@ant-design/icons'
 import './AutRegister.scss'
 import { InputProps } from 'interface/interface'
-import useAuthorization from './useAuthorization'
 
 const AutSkeletRegister: React.FC<InputProps> = ({
   value,
@@ -13,7 +12,9 @@ const AutSkeletRegister: React.FC<InputProps> = ({
   onClick,
   eyeOpen,
 }) => {
-  const { errorEMail, errorPassword } = useAuthorization({ value, name })
+  const errorEMail =
+    (name === 'eMail' && !value.includes('@')) || value.length == 0
+  const errorPassword = name === 'password' && value.length === 0 && !errorEMail
 
   const eyeOpenClose = () => {
     if (name === 'password' && !eyeOpen) {

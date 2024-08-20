@@ -16,7 +16,12 @@ export interface InputAutRegister {
   password: string
 }
 
-export interface OptionsAut {
-  name: string
-  value: string
+export interface Token {
+  access_Token: string
+}
+
+export interface ApiSwaggerState {
+  token: Token[]
+  isLoading: boolean
+  error: string | null
 }
