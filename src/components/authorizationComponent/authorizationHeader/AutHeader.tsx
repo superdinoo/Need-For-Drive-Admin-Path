@@ -1,6 +1,6 @@
 import React from 'react'
 import './AutHeader.scss'
-import LogoAut from '../../../../public/img/LogoAut.png'
+import { LogoAut } from '../../../../public/img/index'
 
 const AutHeader: React.FC = () => {
   return (

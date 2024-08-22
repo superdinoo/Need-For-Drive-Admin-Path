@@ -1,0 +1,115 @@
+.adminMenuLeftContainer {
+  width: 285px;
+  height: 1307px;
+  z-index: 1;
+}
+.adminMenuLeftMain {
+  width: 100%;
+  height: 100%;
+  box-shadow:
+    0px 3.5px 17.5px 0px rgba(165, 182, 201, 0.1),
+    0px 7.5px 11px 0px rgba(90, 97, 105, 0.1),
+    0px 2px 4px 0px rgba(90, 97, 105, 0.12);
+  background-color: #ffffff;
+}
+
+//log
+.adminMenuLeftlogo {
+  width: 100%;
+  height: 67.5px;
+  display: flex;
+  cursor: pointer;
+  box-shadow: 0px -1px 0px 0px #e1e5eb inset;
+}
+
+.adminHeaderLogo {
+  width: 140px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 20px;
+}
+
+.adminImgLogo {
+  width: 21.5px;
+  height: 21.5px;
+}
+
+.adminlogoTxt,
+.adminTextCart {
+  font-family: 'Helvetica';
+  font-size: 16px;
+  font-weight: 400;
+  color: #3d5170;
+}
+
+//cart
+.adminMenuleftOneCartContainer {
+  width: 100%;
+  height: 57.5px;
+  box-shadow: 0px -1px 0px 0px #e1e5eb inset;
+  transition: background-color 0.5s ease;
+  cursor: pointer;
+}
+
+.adminMenuLeftOneCart {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.adminMenuleftOneCartContainer:hover,
+.adminOneCartActive {
+  border-left: 3px solid #007bff;
+  background-color: #e1e5eb;
+}
+
+.adminTextCart {
+  font-size: 15px;
+  transition: all 0.1s ease;
+}
+
+.adminTextCart:hover,
+.adminOneCartActiveText {
+  color: #007bff;
+}
+
+.adminPaintLeftCart {
+  margin-left: 20px;
+  filter: invert(81%) sepia(25%) saturate(6%) hue-rotate(54deg) brightness(96%)
+    contrast(89%);
+}
+
+.adminPaintLeftCart:hover,
+.adminOneCartActivePaint {
+  filter: invert(36%) sepia(77%) saturate(4628%) hue-rotate(201deg)
+    brightness(104%) contrast(105%);
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .adminMenuLeftContainer {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .adminMenuLeftContainer {
+    width: 150px;
+  }
+  .adminlogoTxt,
+  .adminTextCart {
+    font-size: 13px;
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+  .adminMenuLeftContainer {
+    width: 200px;
+  }
+}

@@ -1,0 +1,37 @@
+.adminFooterContainer {
+  width: 100%;
+  height: 50.5px;
+}
+
+.adminFooterMain {
+  box-shadow: 0px 2.5px 9.5px 0px #5a61691f;
+  height: 100%;
+  background: rgba(255, 255, 255, 1);
+  display: flex;
+  justify-content: space-between;
+}
+
+.adminFooterLeft {
+  width: 295px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.adminFooterRight {
+  width: 179.5px;
+  margin-right: 10px;
+}
+
+.firstTitleFooterAdmin,
+.secondTitleFooterAdmin,
+.nameCompany {
+  font-family: Helvetica;
+  font-size: 14px;
+  font-weight: 400;
+  color: #007bff;
+  cursor: pointer;
+}
+
+.nameCompany {
+  color: #818ea3;
+}

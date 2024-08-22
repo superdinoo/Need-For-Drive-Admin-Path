@@ -1,0 +1,142 @@
+.adminCenterInfoCarContainer {
+  width: 100%;
+  height: auto;
+}
+.adminCenterInfoCarContainerLine {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 20px;
+  box-shadow:
+    0px 0.5px 0px 0px rgba(224, 226, 232, 1),
+    0px -0.5px 0px 0px rgba(224, 226, 232, 1);
+}
+
+.adminInfoCar {
+  width: 138px;
+  height: 63px;
+  margin-right: 10px;
+}
+.imageCarInfoImg {
+  width: 100%;
+  height: 100%;
+}
+
+.adminInfoCarBlockDate {
+  height: 100%;
+}
+
+//txt
+
+.settingLine {
+  width: 286.5px;
+  height: 56px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.firstLineBlock {
+  width: 247px;
+  height: 15px;
+}
+
+.adminInfoCarBlockName,
+.paragraff,
+.adminInfoRateDate,
+.adminInfoColorDate,
+.btnDone {
+  font-family: 'Roboto';
+  font-size: 13px;
+  font-weight: 400;
+  color: rgba(60, 80, 111, 1);
+  margin: 0;
+}
+.paragraff,
+.adminInfoRateDate {
+  color: rgba(134, 142, 150, 1);
+  margin: 0px;
+}
+.secondLineBlock {
+  width: 214.5px;
+  height: 15px;
+}
+
+.threeLineBlock {
+  width: 100%;
+  height: 15px;
+}
+
+//rate
+
+.centerPathAdmin {
+  height: 53px;
+}
+
+//price
+
+.adminInfoCarPrice {
+  width: 131.5px;
+  height: 29px;
+}
+
+.infoPrice {
+  font-family: Helvetica;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+//btn
+
+.adminInfoCarBlockBtn {
+  width: 213px;
+  height: 24px;
+  display: flex;
+}
+
+.btnfirstInfo {
+  width: 71.5px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 0.5px solid rgba(190, 202, 214, 1);
+  cursor: pointer;
+}
+
+.imageCarInfo {
+  width: 12px;
+  height: 12px;
+}
+
+.btnDone {
+  font-size: 11px;
+  color: rgba(90, 97, 105, 1);
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .adminCenterInfoCarContainerLine {
+    display: flex;
+    flex-direction: column;
+  }
+  .adminInfoCar {
+    height: auto;
+  }
+  .adminInfoCarBlockDate {
+    height: auto;
+  }
+  .centerPathAdmin {
+    height: auto;
+  }
+  .adminInfoCar {
+    height: auto;
+  }
+  .adminInfoCarPrice {
+    height: auto;
+  }
+}

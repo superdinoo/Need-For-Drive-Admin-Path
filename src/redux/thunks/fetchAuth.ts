@@ -1,10 +1,11 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import Cookies from 'js-cookie'
 import apiClient from '../api/apiClient'
+import { setToken } from '../reducers/apiTokenReducer'
 
 const fetchAuth = createAsyncThunk(
   'apiSwagger/fetchAuth',
-  async (_, { rejectWithValue }) => {
+  async (_, { dispatch, rejectWithValue }) => {
     try {
       const response = await apiClient.post(`/auth/login`, {
         username: 'intern',
@@ -12,6 +13,8 @@ const fetchAuth = createAsyncThunk(
       })
 
       const token = response.data.access_token
+      console.log(token)
+      dispatch(setToken(response.data.access_token))
 
       Cookies.set('access_token', token, {
         expires: 3600,
