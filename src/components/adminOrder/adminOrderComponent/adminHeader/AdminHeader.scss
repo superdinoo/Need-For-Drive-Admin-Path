@@ -156,10 +156,17 @@
   .admImg {
     z-index: 1;
   }
+  .dropDownContainer {
+    top: auto;
+    width: 120px;
+  }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   .adminForm {
     width: 100%;
+  }
+  .dropDownContainer {
+    width: 190px;
   }
 }

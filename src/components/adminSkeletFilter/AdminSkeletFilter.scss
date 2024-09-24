@@ -94,7 +94,7 @@
   cursor: pointer;
   transition: all;
 }
-.buttonListFilterCar:hover {
+.buttonListFilterCarActive {
   background-color: rgb(78, 77, 77);
   transition: 0.5s ease;
 }
@@ -103,7 +103,7 @@
   .adminCenterBlockHeaderContainer {
     display: flex;
     flex-direction: column;
-    align-items: stretch;
+    align-items: center;
   }
   .adminCenterBlock {
     height: auto;

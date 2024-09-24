@@ -1,13 +1,30 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Avatar, DropDown } from '../../../../../../public/img/index'
+import { useDispatch, useSelector } from 'react-redux'
+import fetchLogAut from '../../../../../redux/thunks/fetchLogAut'
+import { selectTokensApi } from '../../selectorsToken'
+import { ThunkDispatch } from 'redux-thunk'
+import { RootState } from 'redux/rootState'
+import { Action } from 'redux'
 
 const AdminAccount = () => {
+  const dispatch: ThunkDispatch<RootState, unknown, Action> = useDispatch()
+  const token = useSelector(selectTokensApi)
   const [adminDropDown, setAdminDropDown] = useState(false)
 
   const handleAdminDropDown = () => {
     setAdminDropDown(!adminDropDown)
   }
+
+  const handleLogout = async () => {
+    try {
+      dispatch(fetchLogAut())
+    } catch (error) {
+      console.log('токен не удален')
+    }
+  }
+
   return (
     <div className="adminPath">
       <div className="adminMain">
@@ -26,9 +43,13 @@ const AdminAccount = () => {
               <button type="button" className="dropDownSettingBtn">
                 Настройки
               </button>
-              <Link to="/Authorization">
+              <Link to="/">
                 <div className="dropDownBlockBtn">
-                  <button type="button" className="dropDownSettingBtn">
+                  <button
+                    type="button"
+                    className="dropDownSettingBtn"
+                    onClick={handleLogout}
+                  >
                     Выйти
                   </button>
                 </div>

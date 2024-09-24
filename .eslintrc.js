@@ -52,6 +52,7 @@ module.exports = {
       plugins: ['@typescript-eslint'],
       rules: {
         'arrow-body-style': 'off',
+        'no-unused-expressions': 'error',
       },
     },
   ],

@@ -1,4 +1,4 @@
-import { NewPost, BlogIcon, BlogPost } from '../../../../src/assets'
+import { BlogIcon, Blog_Posts, New_Post } from '../../../../public/img/index'
 
 const adminBtn = [
   {
@@ -10,14 +10,14 @@ const adminBtn = [
   },
   {
     name: 'Список авто',
-    img: BlogPost,
+    img: Blog_Posts,
     id: 2,
     isActive: false,
     Path: '/ListCar',
   },
   {
     name: 'Заказы',
-    img: NewPost,
+    img: New_Post,
     id: 3,
     isActive: false,
     Path: '/AdminOrders',

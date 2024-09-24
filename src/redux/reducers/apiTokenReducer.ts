@@ -14,12 +14,15 @@ const apiTokenReducer = createSlice({
         tokens: action.payload,
       }
     },
-    clearToken: (state) => {
-      state.tokens = null
+    setClearToken: (state) => {
+      return {
+        ...state,
+        tokens: null,
+      }
     },
   },
 })
 
-export const { setToken, clearToken } = apiTokenReducer.actions
+export const { setToken, setClearToken } = apiTokenReducer.actions
 
 export default apiTokenReducer.reducer

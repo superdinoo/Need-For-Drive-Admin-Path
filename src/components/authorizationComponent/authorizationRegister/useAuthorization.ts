@@ -1,8 +1,11 @@
 import { useEffect, useState } from 'react'
-import { useDispatch } from 'react-redux'
-import setAuthorization from '../../../redux/actions/setAuthorization'
+import { useDispatch, useSelector } from 'react-redux'
+import { setAuthorization } from '../../../redux/actions/setAuthorization'
+import getRegisterInfo from './selectRegister'
 
 const useAuthorization = () => {
+  const { isFixData } = useSelector(getRegisterInfo)
+
   const dispatch = useDispatch()
   const [autData, setAutData] = useState({
     eMail: '',
@@ -16,7 +19,6 @@ const useAuthorization = () => {
 
   const handleInputAutData = (name: string, value: string) => {
     const truncatedValue = value.substring(0, 150).replace(/^\s+/, '')
-
     if (name) {
       setAutData((prev) => ({
         ...prev,
@@ -26,13 +28,15 @@ const useAuthorization = () => {
   }
 
   useEffect(() => {
-    dispatch(
-      setAuthorization({
-        eMail: autData.eMail,
-        password: autData.password,
-      }),
-    )
-  }, [autData.eMail, autData.password])
+    if (isFixData) {
+      dispatch(
+        setAuthorization({
+          eMail: autData.eMail,
+          password: autData.password,
+        }),
+      )
+    }
+  }, [autData.eMail, autData.password, isFixData])
 
   return {
     handleEyeOpen,

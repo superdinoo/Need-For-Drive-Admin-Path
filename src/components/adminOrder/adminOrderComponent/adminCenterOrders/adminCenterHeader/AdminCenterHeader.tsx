@@ -6,13 +6,13 @@ const AdminCenterHeader: React.FC = () => {
   return (
     <AdminSkeletFilter
       items={[
-        { id: 1, name: 'Неделя' },
-        { id: 2, name: 'Elantra' },
+        { id: 1234567890, name: 'Длительность' },
+        { id: 112, name: 'Название авто' },
         {
-          id: 3,
-          name: 'Ульяновск',
+          id: 113,
+          name: 'Город',
         },
-        { id: 4, name: 'В процессе' },
+        { id: 114, name: 'Статус' },
       ]}
     />
   )

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import './AdminPagination.scss'
 import { Pagination } from 'antd'
 import usePaginations from './usePaginations'

@@ -5,6 +5,7 @@ import { ApiSwaggerState } from '../../interface/interface'
 
 const initialState: ApiSwaggerState = {
   token: [],
+  orderCar: [],
   isLoading: false,
   error: null,
 }
@@ -15,6 +16,8 @@ const apiSwaggerSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     apiSwaggerPromise(fetchAuth, 'token')(builder)
+    apiSwaggerPromise(fetchCarData, 'orderCar')(builder)
+    apiSwaggerPromise(fetchLogAut, 'token')(builder)
   },
 })
 

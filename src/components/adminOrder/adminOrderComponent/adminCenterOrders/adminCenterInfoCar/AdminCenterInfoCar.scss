@@ -4,14 +4,12 @@
 }
 .adminCenterInfoCarContainerLine {
   width: 100%;
-  height: 100%;
+  height: auto;
   display: flex;
   justify-content: space-around;
   align-items: center;
   margin-top: 20px;
-  box-shadow:
-    0px 0.5px 0px 0px rgba(224, 226, 232, 1),
-    0px -0.5px 0px 0px rgba(224, 226, 232, 1);
+  box-shadow: 0px 0.5px 0px 0px rgba(224, 226, 232, 1);
 }
 
 .adminInfoCar {
@@ -32,14 +30,14 @@
 
 .settingLine {
   width: 286.5px;
-  height: 56px;
+  height: auto;
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
 .firstLineBlock {
   width: 247px;
-  height: 15px;
+  height: auto;
 }
 
 .adminInfoCarBlockName,
@@ -60,20 +58,50 @@
 }
 .secondLineBlock {
   width: 214.5px;
-  height: 15px;
+  height: auto;
 }
 
 .threeLineBlock {
   width: 100%;
-  height: 15px;
+  height: auto;
 }
 
 //rate
 
 .centerPathAdmin {
-  height: 53px;
+  width: 150px;
+  height: 56px;
 }
-
+.centerPathAdminRate {
+  width: 100%;
+  height: 100%;
+}
+.lineCheckBox {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.inputCheckBox {
+  width: 13px;
+  height: 13px;
+}
+.checkBoxTextAdmin {
+  font-family: 'Roboto';
+  font-size: 15px;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+  margin: 0;
+}
+.inputCheckBox {
+  border: 1px solid rgba(190, 202, 214, 1);
+}
+.inputCheckBox:checked {
+  accent-color: #ffffff;
+  background-color: #e9ecef;
+  box-shadow: 0 0 0 1px #0ec261;
+}
 //price
 
 .adminInfoCarPrice {
@@ -85,6 +113,7 @@
   font-family: Helvetica;
   font-size: 24px;
   font-weight: 400;
+  margin: 0;
 }
 
 //btn
@@ -124,19 +153,29 @@
     display: flex;
     flex-direction: column;
   }
-  .adminInfoCar {
-    height: auto;
-  }
+  .adminInfoCar,
+  .adminInfoCarPrice,
+  .adminInfoCar,
+  .centerPathAdmin,
   .adminInfoCarBlockDate {
     height: auto;
   }
-  .centerPathAdmin {
-    height: auto;
+  .settingLine {
+    align-items: center;
   }
-  .adminInfoCar {
-    height: auto;
+  .threeLineBlock {
+    width: auto;
   }
   .adminInfoCarPrice {
-    height: auto;
+    width: auto;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .checkBoxTextAdmin {
+    font-size: 11px;
+  }
+  .infoPrice {
+    font-size: 17px;
   }
 }

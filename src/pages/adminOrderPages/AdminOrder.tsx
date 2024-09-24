@@ -9,23 +9,21 @@ import {
 } from '../../components/adminOrder'
 
 const AdminOrder: React.FC = () => {
+  const routes = [
+    { path: '/Admin', content: 'Карточка автомобиля' },
+    { path: '/ListCar', content: 'Список автомобилей' },
+    { path: '/AdminOrders', content: <AdminCenterOrderCar /> },
+  ]
   const location = useLocation()
 
   let content: React.ReactNode = ''
 
-  switch (location.pathname) {
-    case '/Admin':
-      content = 'Карточка автомобиля'
-      break
-    case '/ListCar':
-      content = 'Список автомобилей'
-      break
-    case '/AdminOrders':
-      content = <AdminCenterOrderCar />
-      break
-    default:
-      content = ''
-      break
+  const route = routes.find(
+    (routeContent) => routeContent.path === location.pathname,
+  )
+
+  if (route) {
+    content = route.content
   }
 
   return (

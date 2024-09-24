@@ -1,50 +1,3 @@
-// const path = require('path')
-// const HtmlWebpackPlugin = require('html-webpack-plugin')
-// const dotenv = require('dotenv')
-// const webpack = require('webpack')
-
-// module.exports = (env) => {
-//   // Загружаем .env файл, основанный на текущем окружении
-//   const currentEnv = dotenv.config({
-//     path: `./.env.${env.ENVIRONMENT || 'development'}`,
-//   }).parsed
-
-//   // Преобразуем переменные окружения для DefinePlugin
-//   const envKeys = Object.keys(currentEnv).reduce((prev, next) => {
-//     prev[`process.env.${next}`] = JSON.stringify(currentEnv[next])
-//     return prev
-//   }, {})
-
-//   return {
-//     entry: './src/index.tsx',
-//     output: {
-//       path: path.resolve(__dirname, 'dist'),
-//       filename: 'bundle.js',
-//       publicPath: '/',
-//     },
-//     devServer: {
-//       port: process.env.PORT || 3000, //  <-  Добавлен порт по умолчанию
-//       historyApiFallback: true,
-//       hot: true,
-//     },
-//     resolve: {
-//       extensions: ['.tsx', '.ts', '.js', '.jsx'],
-//       //  Убираем fallback для 'path', так как он нужен только во время сборки
-//     },
-//     module: {
-//       rules: [
-//         // ... (правила для tsx, scss, изображений и шрифтов - остаются без изменений)
-//       ],
-//     },
-//     plugins: [
-//       new HtmlWebpackPlugin({
-//         template: './public/index.html',
-//       }),
-//       new webpack.DefinePlugin(envKeys), //  <- Используем DefinePlugin
-//     ],
-//   }
-// }
-
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const dotenv = require('dotenv')
@@ -79,26 +32,7 @@ module.exports = (env) => {
         {
           test: /\.tsx?$/,
           exclude: /node_modules/,
-          use: {
-            loader: 'babel-loader',
-            options: {
-              presets: [
-                '@babel/preset-env',
-                '@babel/preset-react',
-                '@babel/preset-typescript',
-              ],
-              plugins: [
-                [
-                  '@babel/plugin-transform-runtime',
-                  {
-                    definitions: {
-                      'process.env': {},
-                    },
-                  },
-                ],
-              ],
-            },
-          },
+          loader: 'babel-loader',
         },
         {
           test: /\.s[ac]ss$/i,

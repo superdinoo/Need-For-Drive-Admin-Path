@@ -8,7 +8,7 @@ const AdminMenuLeft: React.FC = () => {
   return (
     <div className="adminMenuLeftContainer">
       <div className="adminMenuLeftMain">
-        <Link to="/">
+        <Link to="https://superdinoo.github.io/Need-for-Drive/">
           <div className="adminMenuLeftlogo">
             <div className="adminHeaderLogo">
               <img src={LogoAut} className="adminImgLogo" alt="logo" />

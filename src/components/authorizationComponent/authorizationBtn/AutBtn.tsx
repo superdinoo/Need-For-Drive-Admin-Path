@@ -5,15 +5,25 @@ import { useDispatch, useSelector } from 'react-redux'
 import { ThunkDispatch } from 'redux-thunk'
 import { RootState } from 'redux/rootState'
 import { Action } from 'redux'
-import { Link } from 'react-router-dom'
+import { fixData } from '../../../redux/actions/setAuthorization'
 import getRegisterInfo from '../authorizationRegister/selectRegister'
+import { Link, useNavigate } from 'react-router-dom'
+import { selectTokensApi } from '../../adminOrder/adminOrderComponent/selectorsToken'
 
 const AutBtn: React.FC = () => {
   const dispatch: ThunkDispatch<RootState, unknown, Action> = useDispatch()
+  const token = useSelector(selectTokensApi)
+  const navigate = useNavigate()
   const { eMail, password } = useSelector(getRegisterInfo)
 
-  const handleLogin = () => {
-    dispatch(fetchAuth())
+  const handleLogin = async () => {
+    try {
+      await dispatch(fetchAuth({ eMail, password }))
+      await dispatch(fixData())
+      if (token) navigate('/Admin')
+    } catch (error) {
+      console.error('Токен не получен')
+    }
   }
 
   return (
@@ -24,11 +34,9 @@ const AutBtn: React.FC = () => {
         </button>
       </div>
       <div className="secondBtnContainerAut">
-        <Link to={eMail.length > 0 && password.length > 0 ? '/Admin' : ''}>
-          <button type="button" className="secondBtnAut" onClick={handleLogin}>
-            Войти
-          </button>
-        </Link>
+        <button type="button" className="secondBtnAut" onClick={handleLogin}>
+          Войти
+        </button>
       </div>
     </div>
   )
