@@ -24,8 +24,9 @@ module.exports = (env) => {
       hot: true,
     },
     resolve: {
-      extensions: ['.tsx', '.ts', '.js', '.jsx'],
+      extensions: ['.tsx', '.ts', '.js', '.jsx', '.svg'],
     },
+
     module: {
       rules: [
         {
@@ -50,12 +51,17 @@ module.exports = (env) => {
           ],
         },
         {
-          test: /\.(png|svg|jpg|jpeg|gif)$/i,
+          test: /\.(png|jpg|jpeg|gif)$/i,
           type: 'asset/resource',
         },
         {
           test: /\.(woff|woff2|eot|ttf|otf)$/i,
           type: 'asset/resource',
+        },
+        {
+          test: /\.svg$/,
+          include: path.resolve(__dirname, 'src/assets'),
+          use: ['@svgr/webpack'],
         },
       ],
     },

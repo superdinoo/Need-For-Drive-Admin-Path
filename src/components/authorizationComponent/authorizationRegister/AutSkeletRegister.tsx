@@ -13,9 +13,8 @@ const AutSkeletRegister: React.FC<InputProps> = ({
   eyeOpen,
 }) => {
   const errorEMail =
-    name === 'eMail' && !value.includes('intern') && value.length >= 1
-  const errorPassword =
-    name === 'password' && !value.includes('intern-S!') && value.length >= 1
+    name === 'eMail' && !value.includes('@') && value.length >= 1
+  const errorPassword = name === 'password' && value.length >= 1
 
   const eyeOpenClose = () => {
     if (name === 'password' && !eyeOpen) {

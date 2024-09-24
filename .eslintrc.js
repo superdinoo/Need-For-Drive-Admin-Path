@@ -1,58 +1,59 @@
 module.exports = {
-  extends: ["airbnb", "prettier"],
-  plugins: ["react", "jsx-a11y", "import", "react-hooks", "@typescript-eslint"],
+  extends: ['airbnb', 'prettier'],
+  plugins: ['react', 'jsx-a11y', 'import', 'react-hooks', '@typescript-eslint'],
   rules: {
-    "react/jsx-no-useless-fragment": "off",
-    "react/jsx-uses-react": "off",
-    "react/react-in-jsx-scope": "off",
-    "react/jsx-filename-extension": [
+    'react/jsx-no-useless-fragment': 'off',
+    'react/jsx-uses-react': 'off',
+    'react/react-in-jsx-scope': 'off',
+    'react/jsx-filename-extension': [
       1,
-      { extensions: [".js", ".jsx", ".ts", ".tsx"] },
+      { extensions: ['.js', '.jsx', '.ts', '.tsx'] },
     ],
-    "react/function-component-definition": [
+    'react/function-component-definition': [
       2,
       {
-        namedComponents: "arrow-function",
-        unnamedComponents: "arrow-function",
+        namedComponents: 'arrow-function',
+        unnamedComponents: 'arrow-function',
       },
     ],
-    "import/extensions": [
-      "error",
-      "ignorePackages",
+    'import/extensions': [
+      'error',
+      'ignorePackages',
       {
-        js: "never",
-        jsx: "never",
-        ts: "never",
-        tsx: "never",
+        js: 'never',
+        jsx: 'never',
+        ts: 'never',
+        tsx: 'never',
       },
     ],
-    "import/no-unresolved": "off",
-    "jsx-a11y/click-events-have-key-events": "off",
-    "jsx-a11y/no-noninteractive-element-interactions": "off",
+    'import/no-unresolved': 'off',
+    'jsx-a11y/click-events-have-key-events': 'off',
+    'jsx-a11y/no-noninteractive-element-interactions': 'off',
   },
   settings: {
-    "import/resolver": {
+    'import/resolver': {
       node: {
-        extensions: [".js", ".jsx", ".ts", ".tsx"],
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
       },
     },
   },
   overrides: [
     {
-      files: ["*.ts", "*.tsx"],
-      parser: "@typescript-eslint/parser",
+      files: ['*.ts', '*.tsx'],
+      parser: '@typescript-eslint/parser',
       parserOptions: {
-        ecmaVersion: "latest",
-        sourceType: "module",
+        ecmaVersion: 'latest',
+        sourceType: 'module',
         ecmaFeatures: {
           jsx: true,
         },
       },
-      extends: ["plugin:@typescript-eslint/recommended", "prettier"],
-      plugins: ["@typescript-eslint"],
+      extends: ['plugin:@typescript-eslint/recommended', 'prettier'],
+      plugins: ['@typescript-eslint'],
       rules: {
-        "arrow-body-style": "off",
+        'arrow-body-style': 'off',
+        'no-unused-expressions': 'error',
       },
     },
   ],
-};
+}
