@@ -4,17 +4,19 @@ import apiClient from '../api/apiClient'
 
 const fetchAuth = createAsyncThunk(
   'apiSwagger/fetchAuth',
-  async (_, { rejectWithValue }) => {
+  async (
+    userData: { eMail: string; password: string },
+    { rejectWithValue },
+  ) => {
     try {
       const response = await apiClient.post(`/auth/login`, {
-        username: 'intern',
-        password: 'intern-S!',
+        username: userData.eMail,
+        password: userData.password,
       })
 
       const token = response.data.access_token
 
       Cookies.set('access_token', token, {
-        expires: 3600,
         httpOnly: true,
         secure: true,
         sameSite: 'strict',

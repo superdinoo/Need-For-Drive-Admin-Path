@@ -1,15 +1,21 @@
 import React from 'react'
 import './AutBtn.scss'
 import fetchAuth from '../../../redux/thunks/fetchAuth'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { ThunkDispatch } from 'redux-thunk'
 import { RootState } from 'redux/rootState'
 import { Action } from 'redux'
+import { fixData } from '../../../redux/actions/setAuthorization'
+import getRegisterInfo from '../authorizationRegister/selectRegister'
 
 const AutBtn: React.FC = () => {
   const dispatch: ThunkDispatch<RootState, unknown, Action> = useDispatch()
+
+  const { eMail, password } = useSelector(getRegisterInfo)
+
   const handleLogin = () => {
-    dispatch(fetchAuth())
+    dispatch(fetchAuth({ eMail, password }))
+    dispatch(fixData())
   }
 
   return (
