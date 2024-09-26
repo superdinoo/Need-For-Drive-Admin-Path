@@ -13,4 +13,8 @@ export type OrderCar = {
   orderCar: OrderApiPost[]
 }
 
+export type CarsMain = {
+  carsMain: OrderApiPost[]
+}
+
 export type RootState = ReturnType<typeof store.getState>

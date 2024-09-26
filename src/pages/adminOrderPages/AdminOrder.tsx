@@ -7,11 +7,12 @@ import {
   AdminMenuLeft,
   AdminHeader,
 } from '../../components/adminOrder'
+import AdminListCars from '../../components/adminListCars/AdminListCars'
 
 const AdminOrder: React.FC = () => {
   const routes = [
     { path: '/Admin', content: 'Карточка автомобиля' },
-    { path: '/ListCar', content: 'Список автомобилей' },
+    { path: '/ListCar', content: <AdminListCars /> },
     { path: '/AdminOrders', content: <AdminCenterOrderCar /> },
   ]
   const location = useLocation()

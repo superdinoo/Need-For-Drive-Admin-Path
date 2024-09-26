@@ -1,35 +1,35 @@
+import { setCarsMain } from '../reducers/carsListReducer'
 import apiClient from '../api/apiClient'
 import { createAsyncThunk } from '@reduxjs/toolkit'
-import { setOrderData } from '../reducers/apiOrderData'
 
-const fetchCarData = createAsyncThunk(
-  'apiSwagger/fetchCarData',
+const fetchCarMass = createAsyncThunk(
+  'apiSwagger/fetchCarMass',
   async (
-    tokenData: {
+    carsData: {
       token: string
       carsSizePage: number
-      currentPageCarData: number
+      currentPageCarsMass: number
     },
     { dispatch, rejectWithValue },
   ) => {
     try {
       const response = await apiClient.get(
-        `/db/order?page=${tokenData.currentPageCarData}&limit=${tokenData.carsSizePage}`,
+        `/db/car?page=${carsData.currentPageCarsMass}&limit=${carsData.carsSizePage}`,
         {
           headers: {
             'X-Api-Factory-Application-Id': '5e25c641099b810b946c5d5b',
-            Authorization: `Bearer ${tokenData.token}`,
+            Authorization: `Bearer ${carsData.token}`,
           },
         },
       )
       const totalCount = response.data.count
 
-      dispatch(setOrderData(response.data.data))
+      dispatch(setCarsMain(response.data.data))
       return { totalCount, data: response.data.data }
     } catch (error) {
-      console.error('Ошибка при загрузке данных авто', error)
+      console.error('Ошибка при загрузке данных списка авто', error)
       return rejectWithValue({ error: 'Failed to load car data' })
     }
   },
 )
-export default fetchCarData
+export default fetchCarMass
