@@ -1,0 +1,172 @@
+.adminHeaderContainer {
+  width: 100%;
+  height: 50.5px;
+}
+.adminHeaderMain {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  background: #ffffff;
+  box-shadow: 0px 2.5px 9.5px 0px #5a61691f;
+}
+
+.adminForm {
+  width: 1327px;
+  height: 100%;
+  position: relative;
+}
+.adminInput {
+  width: 100%;
+  height: 97%;
+  padding-left: 30px;
+  padding-right: 40px;
+  display: flex;
+  align-items: center;
+  outline: none;
+  border: none;
+}
+.adminInputImg {
+  width: 15px;
+  position: absolute;
+  top: 40%;
+  left: 10px;
+  pointer-events: none;
+}
+
+//push
+
+.adminPush {
+  width: 70px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow:
+    -0.5px 0px 0px 0px #cacedb,
+    0.5px 0px 0px 0px #cacedb;
+  position: relative;
+}
+
+.bell {
+  width: 17px;
+  height: 21px;
+  cursor: pointer;
+}
+.counterBell {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #c4183c;
+  position: absolute;
+  top: 25px;
+  right: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.countNumber {
+  font-family: 'Helvetica';
+  font-size: 14px;
+  color: #ffffff;
+}
+
+//admin
+
+.adminPath {
+  width: 220px;
+  height: 100%;
+}
+.adminMain {
+  width: 168.5px;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 20px;
+  margin-top: 5px;
+}
+
+.admName {
+  font-family: 'Helvetica';
+  font-size: 15px;
+  font-weight: 400;
+  color: #5a6169;
+}
+.adminArrow {
+  width: 15px;
+}
+
+.arrowBtn {
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+//drop
+.dropDownContainer {
+  width: 220px;
+  height: 60px;
+  background: #ffffff;
+  position: absolute;
+  top: 48px;
+}
+
+.dropDownBlock {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.dropDownBlockBtn {
+  width: 100%;
+  height: 30px;
+  box-shadow: 0px 1px 1px 0px #cacedb;
+}
+
+.dropDownSettingBtn {
+  width: 100%;
+  height: 100%;
+  background: none;
+  border: none;
+  color: #5a6169;
+  cursor: pointer;
+}
+
+.dropDownSettingBtn:hover {
+  background-color: #d6d5d5;
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .adminForm {
+    width: 100%;
+  }
+  .counterBell {
+    left: 10px;
+    width: 10px;
+    height: 10px;
+    top: 24px;
+  }
+  .adminPath {
+    width: auto;
+  }
+  .adminMain {
+    width: auto;
+  }
+  .admImg {
+    z-index: 1;
+  }
+  .dropDownContainer {
+    top: auto;
+    width: 120px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .adminForm {
+    width: 100%;
+  }
+  .dropDownContainer {
+    width: 190px;
+  }
+}

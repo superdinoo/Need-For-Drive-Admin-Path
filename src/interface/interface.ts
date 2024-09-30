@@ -22,6 +22,103 @@ export interface Token {
 
 export interface ApiSwaggerState {
   token: Token[]
+  orderCar: OrderApiPost[]
   isLoading: boolean
   error: string | null
+}
+
+export interface CarApi {
+  carId: {
+    name: string
+  }
+  cityId: {
+    name: string
+  }
+  id: number
+  priceMax: number
+  priceMin: number
+  name: 'string'
+  description: 'string'
+  colors: string[]
+  number: string
+  categoryId: {
+    idCategory: number
+    name: string
+  }
+  thumbnail: {
+    path: string
+  }
+  orderStatusId: {
+    name: string
+  }
+  rateId: {
+    id: number
+    price: string
+  }
+  price: number
+}
+
+export interface InitialStateListCars {
+  listCars: CarApi[]
+}
+
+export interface AdminSkelet {
+  items: { id: number; name: string }[]
+}
+
+export interface OrderStatus {
+  id: number
+  name: string
+  createdAt: string
+  updatedAt: string
+}
+
+export interface PointData {
+  id: number
+  name: string
+  address: string
+  city_id: number
+  createdAt: string
+  updatedAt: string
+}
+export interface RateData {
+  id: number
+  price: string
+  rateType_id: number
+  createdAt: string
+  updatedAt: string
+}
+
+export interface OrderApiPost {
+  id: number
+  carId: CarApi
+  color: string
+  dateFrom: string
+  dateTo: string
+  price: number
+  isFullTank: boolean
+  isNeedChildChair: boolean
+  isRightWheel: boolean
+  createdAt: string
+  updatedAt: string
+  orderStatusId: OrderStatus
+  cityId: OrderStatus
+  pointId: PointData
+  rateId: RateData
+}
+
+export interface AdminInfoCarOptionsProps {
+  dateFrom: string
+  dateTo: string
+  dataCars: OrderApiPost
+}
+
+export interface ItemsProps {
+  id: number
+  name: string
+  value: boolean
+}
+
+export interface ItemsData {
+  items: ItemsProps[]
 }

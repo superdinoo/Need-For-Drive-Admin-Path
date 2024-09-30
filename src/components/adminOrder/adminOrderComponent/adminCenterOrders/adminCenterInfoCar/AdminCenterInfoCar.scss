@@ -1,0 +1,181 @@
+.adminCenterInfoCarContainer {
+  width: 100%;
+  height: auto;
+}
+.adminCenterInfoCarContainerLine {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 20px;
+  box-shadow: 0px 0.5px 0px 0px rgba(224, 226, 232, 1);
+}
+
+.adminInfoCar {
+  width: 138px;
+  height: 63px;
+  margin-right: 10px;
+}
+.imageCarInfoImg {
+  width: 100%;
+  height: 100%;
+}
+
+.adminInfoCarBlockDate {
+  height: 100%;
+}
+
+//txt
+
+.settingLine {
+  width: 286.5px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.firstLineBlock {
+  width: 247px;
+  height: auto;
+}
+
+.adminInfoCarBlockName,
+.paragraff,
+.adminInfoRateDate,
+.adminInfoColorDate,
+.btnDone {
+  font-family: 'Roboto';
+  font-size: 13px;
+  font-weight: 400;
+  color: rgba(60, 80, 111, 1);
+  margin: 0;
+}
+.paragraff,
+.adminInfoRateDate {
+  color: rgba(134, 142, 150, 1);
+  margin: 0px;
+}
+.secondLineBlock {
+  width: 214.5px;
+  height: auto;
+}
+
+.threeLineBlock {
+  width: 100%;
+  height: auto;
+}
+
+//rate
+
+.centerPathAdmin {
+  width: 150px;
+  height: 56px;
+}
+.centerPathAdminRate {
+  width: 100%;
+  height: 100%;
+}
+.lineCheckBox {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.inputCheckBox {
+  width: 13px;
+  height: 13px;
+}
+.checkBoxTextAdmin {
+  font-family: 'Roboto';
+  font-size: 15px;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+  margin: 0;
+}
+.inputCheckBox {
+  border: 1px solid rgba(190, 202, 214, 1);
+}
+.inputCheckBox:checked {
+  accent-color: #ffffff;
+  background-color: #e9ecef;
+  box-shadow: 0 0 0 1px #0ec261;
+}
+//price
+
+.adminInfoCarPrice {
+  width: 131.5px;
+  height: 29px;
+}
+
+.infoPrice {
+  font-family: Helvetica;
+  font-size: 24px;
+  font-weight: 400;
+  margin: 0;
+}
+
+//btn
+
+.adminInfoCarBlockBtn {
+  width: 213px;
+  height: 24px;
+  display: flex;
+}
+
+.btnfirstInfo {
+  width: 71.5px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 0.5px solid rgba(190, 202, 214, 1);
+  cursor: pointer;
+}
+
+.imageCarInfo {
+  width: 12px;
+  height: 12px;
+}
+
+.btnDone {
+  font-size: 11px;
+  color: rgba(90, 97, 105, 1);
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .adminCenterInfoCarContainerLine {
+    display: flex;
+    flex-direction: column;
+  }
+  .adminInfoCar,
+  .adminInfoCarPrice,
+  .adminInfoCar,
+  .centerPathAdmin,
+  .adminInfoCarBlockDate {
+    height: auto;
+  }
+  .settingLine {
+    align-items: center;
+  }
+  .threeLineBlock {
+    width: auto;
+  }
+  .adminInfoCarPrice {
+    width: auto;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .checkBoxTextAdmin {
+    font-size: 11px;
+  }
+  .infoPrice {
+    font-size: 17px;
+  }
+}
