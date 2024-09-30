@@ -2,11 +2,11 @@ import React from 'react'
 import './AdminListCarsComponent.scss'
 import { AdminListCarsHeader, AdminListCarsTable } from './index'
 import { AdminPagination } from '../../adminOrder/adminOrderComponent/adminCenterOrders/index'
-import usePaginations from '../../adminOrder/adminOrderComponent/adminCenterOrders/adminPagination/usePaginations'
+import { useCarMassPagination } from '../../hooks/index'
 
 const AdminListCarsComponent: React.FC = () => {
-  const { totalPage, carsSizePage, currentPage, handlePageChange } =
-    usePaginations()
+  const { handlePageChange, totalPage, carsSizePage, currentPage } =
+    useCarMassPagination()
 
   return (
     <div className="adminCenterMain">
@@ -14,8 +14,8 @@ const AdminListCarsComponent: React.FC = () => {
       <AdminListCarsTable />
       <AdminPagination
         onChange={handlePageChange}
-        total={totalPage.totalCarsMass * carsSizePage}
-        current={currentPage.currentCarsMass}
+        total={totalPage * carsSizePage}
+        current={currentPage}
         pageSize={carsSizePage}
       />
     </div>

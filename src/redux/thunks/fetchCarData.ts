@@ -8,13 +8,13 @@ const fetchCarData = createAsyncThunk(
     tokenData: {
       token: string
       carsSizePage: number
-      currentPageCarData: number
+      currentPage: number
     },
     { dispatch, rejectWithValue },
   ) => {
     try {
       const response = await apiClient.get(
-        `/db/order?page=${tokenData.currentPageCarData}&limit=${tokenData.carsSizePage}`,
+        `/db/order?page=${tokenData.currentPage}&limit=${tokenData.carsSizePage}`,
         {
           headers: {
             'X-Api-Factory-Application-Id': '5e25c641099b810b946c5d5b',

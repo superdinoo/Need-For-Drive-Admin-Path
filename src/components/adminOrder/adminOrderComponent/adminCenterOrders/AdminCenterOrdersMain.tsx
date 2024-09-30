@@ -1,22 +1,23 @@
 import React from 'react'
 import './AdminCenterOrdersMain.scss'
-import { AdminCenterHeader, AdminCenterInfoCar, AdminPagination } from './index'
-import usePaginations from './adminPagination/usePaginations'
+import { AdminCenterInfoCar, AdminPagination } from './index'
+import { useCarDataPagination } from '../../../hooks/index'
+import AdminSkeletFilter from '../../../adminSkeletFilter/AdminSkeletFilter'
+import { items } from '../constants'
 
 const AdminCenter: React.FC = () => {
-  const { totalPage, carsSizePage, currentPage, handlePageChange } =
-    usePaginations()
-
+  const { handlePageChange, totalPage, currentPage, carsSizePage } =
+    useCarDataPagination()
   return (
     <div className="adminCenterContainer">
       <h2 className="adminCenterTitle">Заказы</h2>
       <div className="adminCenterMain">
-        <AdminCenterHeader />
+        <AdminSkeletFilter items={items} />
         <AdminCenterInfoCar />
         <AdminPagination
           onChange={handlePageChange}
-          total={totalPage.totalCarData * carsSizePage}
-          current={currentPage.currentCarData}
+          total={totalPage * carsSizePage}
+          current={currentPage}
           pageSize={carsSizePage}
         />
       </div>

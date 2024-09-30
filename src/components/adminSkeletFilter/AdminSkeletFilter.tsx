@@ -3,7 +3,7 @@ import './AdminSkeletFilter.scss'
 import { TbArrowsMoveVertical } from 'react-icons/tb'
 import { AdminSkelet, CarApi } from '../../interface/interface'
 import { useSelector } from 'react-redux'
-import useAdminSkelet from './useAdminSkelet'
+import { useAdminSkelet } from '../hooks/index'
 import {
   selectButtonFilter,
   selectOrdersCar,
