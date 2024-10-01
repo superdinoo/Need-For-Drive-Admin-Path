@@ -23,6 +23,7 @@ export interface Token {
 export interface ApiSwaggerState {
   token: Token[]
   orderCar: OrderApiPost[]
+  carsMain: OrderApiPost[]
   isLoading: boolean
   error: string | null
 }
@@ -121,4 +122,11 @@ export interface ItemsProps {
 
 export interface ItemsData {
   items: ItemsProps[]
+}
+
+export interface AdminPaginationProps {
+  total: number
+  current: number
+  pageSize: number
+  onChange: (page: number) => void
 }

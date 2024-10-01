@@ -7,19 +7,23 @@ import { RootState } from 'redux/rootState'
 import { Action } from 'redux'
 import { fixData } from '../../../redux/actions/setAuthorization'
 import getRegisterInfo from '../authorizationRegister/selectRegister'
-import { Link, useNavigate } from 'react-router-dom'
-import { selectTokensApi } from '../../adminOrder/adminOrderComponent/selectorsToken'
+import { useNavigate } from 'react-router-dom'
+import Cookies from 'js-cookie'
 
 const AutBtn: React.FC = () => {
   const dispatch: ThunkDispatch<RootState, unknown, Action> = useDispatch()
-  const token = useSelector(selectTokensApi)
   const navigate = useNavigate()
   const { eMail, password } = useSelector(getRegisterInfo)
 
-  const handleLogin = async () => {
+  const token = Cookies.get('access_token')
+
+  useEffect(() => {
+    dispatch(fetchAuth({ eMail, password }))
+  }, [eMail, password])
+
+  const handleLogin = () => {
     try {
-      await dispatch(fetchAuth({ eMail, password }))
-      await dispatch(fixData())
+      dispatch(fixData())
       if (token) navigate('/Admin')
     } catch (error) {
       console.error('Токен не получен')
