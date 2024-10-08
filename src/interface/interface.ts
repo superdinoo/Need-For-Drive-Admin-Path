@@ -38,13 +38,14 @@ export interface CarApi {
   id: number
   priceMax: number
   priceMin: number
-  name: 'string'
-  description: 'string'
-  colors: string[]
+  name: string
+  description: string
+  colors: string
   number: string
   categoryId: {
     idCategory: number
     name: string
+    description: string
   }
   thumbnail: {
     path: string
@@ -129,4 +130,25 @@ export interface AdminPaginationProps {
   current: number
   pageSize: number
   onChange: (page: number) => void
+}
+
+export interface DataSkelet {
+  title: string
+  placeholder: string
+  name: string
+  value: string
+  onChange: (word: string) => void
+  type: string
+}
+
+export interface InputCarCart {
+  selectedFile: {}
+  description: string
+  model: string
+  typeAuto: string
+  color: string
+}
+
+export interface ButtonSkelet {
+  name: string
 }

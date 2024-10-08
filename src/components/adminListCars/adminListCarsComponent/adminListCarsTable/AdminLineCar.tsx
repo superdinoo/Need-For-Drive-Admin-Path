@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { selectFilterCarsMass } from '../selectorsCarsMass'
 import { CarApi } from 'interface/interface'
+import { CiSettings } from 'react-icons/ci'
+import { useAdminCarDataCart } from '../../../hooks/index'
 
 const AdminLineCar = () => {
   const dataCars = useSelector(selectFilterCarsMass)
+  const { handleDataCar } = useAdminCarDataCart()
 
   return (
     <>
@@ -24,10 +27,19 @@ const AdminLineCar = () => {
             <p className="columnThreeTxt">{carLine.categoryId.name}</p>
           </div>
           <div className="columnFour">
-            <p className="columnFourTxt">{carLine.colors.join(', ')}</p>
+            <p className="columnFourTxt">{carLine.colors}</p>
           </div>
           <div className="columnFive">
             <p className="columnFiveTxt">{carLine.priceMin} рублей</p>
+            <div className="settingColumn">
+              <button
+                className="settingColumnButton"
+                key={carLine.carId?.toString()}
+                onClick={() => handleDataCar(carLine)}
+              >
+                <CiSettings size={20} />
+              </button>
+            </div>
           </div>
         </div>
       ))}

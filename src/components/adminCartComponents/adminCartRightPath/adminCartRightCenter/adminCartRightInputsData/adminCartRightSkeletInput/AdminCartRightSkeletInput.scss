@@ -1,0 +1,107 @@
+.adminSkeletRightMain {
+  width: 310px;
+  height: 69px;
+}
+.adminSkeletrightContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.adminTitleSkeletContainer {
+  width: 100%;
+  height: 12px;
+}
+.adminTitleSkeletText {
+  font-family: 'Helvetica';
+  font-size: 12px;
+  font-weight: 400;
+}
+.adminSkeletRightInputConatiner {
+  width: 100%;
+  height: 30px;
+  position: relative;
+}
+.adminSkeletRightInputConatinerColor {
+  width: 100%;
+  height: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+.adminSkeletInputRight,
+.adminSkeletInputRightColor,
+.adminCartHeaderReject {
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(190, 202, 214, 1);
+  border-radius: 4px;
+  font-family: Helvetica;
+  font-size: 11px;
+  font-weight: 400;
+}
+
+.adminCartHeaderReject {
+  border: 1px solid rgba(196, 24, 60, 1);
+}
+
+.adminSkeletInputRightColor {
+  width: 263px;
+  height: 100%;
+}
+
+.adminSkeletColorPlus {
+  width: 33px;
+  height: 33px;
+}
+.adminSkeletColorContainerPlus,
+.adminSkeletColorContainerPlusActive {
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(190, 202, 214, 1);
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease;
+}
+.adminSkeletColorContainerPlusActive {
+  background-color: rgb(211, 208, 208);
+}
+
+.check {
+  position: absolute;
+  top: 30px;
+}
+
+.textError {
+  position: absolute;
+  top: 30px;
+}
+
+.tetErrorP {
+  font-family: Helvetica;
+  font-size: 10px;
+  font-weight: 400;
+  color: rgba(196, 24, 60, 1);
+}
+
+.adminCartHeaderTitle {
+  font-family: 'Helvetica';
+  font-size: 24.5px;
+  font-weight: 400;
+  color: rgba(61, 81, 112, 1);
+  margin: 0;
+  text-align: center;
+  border: none;
+  outline: none;
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .adminSkeletRightMain {
+    width: 250px;
+  }
+}
