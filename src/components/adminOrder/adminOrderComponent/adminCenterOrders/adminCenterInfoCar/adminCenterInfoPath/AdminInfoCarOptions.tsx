@@ -1,6 +1,6 @@
 import React from 'react'
 import { AdminInfoCarOptionsProps } from '../../../../../../interface/interface'
-import adminDateFrom from './adminDateFromTo'
+import { adminDateFrom } from '../../../../../helpers'
 
 const AdminInfoCarOptions: React.FC<AdminInfoCarOptionsProps> = ({
   dataCars,

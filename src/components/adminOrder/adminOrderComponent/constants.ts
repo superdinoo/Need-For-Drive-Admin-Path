@@ -1,12 +1,12 @@
 import { BlogIcon, Blog_Posts, New_Post } from '../../../../public/img/index'
 
-const adminBtn = [
+export const adminBtn = [
   {
     name: 'Карточка автомобиля',
     img: BlogIcon,
     id: 1,
     isActive: false,
-    Path: '/Admin',
+    Path: '/AdminCart',
   },
   {
     name: 'Список авто',
@@ -24,4 +24,12 @@ const adminBtn = [
   },
 ]
 
-export default adminBtn
+export const items = [
+  { id: 1234567890, name: 'Длительность' },
+  { id: 112, name: 'Название авто' },
+  {
+    id: 113,
+    name: 'Город',
+  },
+  { id: 114, name: 'Статус' },
+]

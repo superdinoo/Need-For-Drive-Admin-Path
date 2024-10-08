@@ -5,8 +5,8 @@
 .adminCenterInfoCarContainerLine {
   width: 100%;
   height: auto;
-  display: flex;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   align-items: center;
   margin-top: 20px;
   box-shadow: 0px 0.5px 0px 0px rgba(224, 226, 232, 1);
