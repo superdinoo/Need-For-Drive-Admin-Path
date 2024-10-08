@@ -1,13 +1,18 @@
 import React from 'react'
 import './AdminCenterOrdersMain.scss'
 import { AdminCenterInfoCar, AdminPagination } from './index'
-import { useCarDataPagination } from '../../../hooks/index'
+import { usePagination } from '../../../hooks/index'
 import AdminSkeletFilter from '../../../adminSkeletFilter/AdminSkeletFilter'
 import { items } from '../constants'
+import fetchCarData from '../../../../redux/thunks/fetchCarData'
 
 const AdminCenter: React.FC = () => {
-  const { handlePageChange, totalPage, currentPage, carsSizePage } =
-    useCarDataPagination()
+  const { carsSizePage, currentPage, handlePageChange, totalPage } =
+    usePagination({
+      fetchFunction: fetchCarData,
+      carsSizePage: 3,
+    })
+
   return (
     <div className="adminCenterContainer">
       <h2 className="adminCenterTitle">Заказы</h2>

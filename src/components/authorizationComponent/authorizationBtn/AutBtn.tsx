@@ -9,17 +9,27 @@ import { fixData } from '../../../redux/actions/setAuthorization'
 import getRegisterInfo from '../authorizationRegister/selectRegister'
 import { useNavigate } from 'react-router-dom'
 import Cookies from 'js-cookie'
+import selectFixData from '../authorizationRegister/selectRegister'
 
 const AutBtn: React.FC = () => {
   const dispatch: ThunkDispatch<RootState, unknown, Action> = useDispatch()
   const navigate = useNavigate()
   const { eMail, password } = useSelector(getRegisterInfo)
-
   const token = Cookies.get('access_token')
 
+  const data = useSelector(selectFixData)
+
+  console.log(data)
+
   useEffect(() => {
-    dispatch(fetchAuth({ eMail, password }))
-  }, [eMail, password])
+    if (
+      data.eMail.length > 0 &&
+      data.password.length > 0 &&
+      data.isFixData === true
+    ) {
+      dispatch(fetchAuth({ eMail, password }))
+    }
+  }, [eMail, password, data])
 
   const handleLogin = () => {
     try {

@@ -2,11 +2,15 @@ import React from 'react'
 import './AdminListCarsComponent.scss'
 import { AdminListCarsHeader, AdminListCarsTable } from './index'
 import { AdminPagination } from '../../adminOrder/adminOrderComponent/adminCenterOrders/index'
-import { useCarMassPagination } from '../../hooks/index'
+import { usePagination } from '../../hooks/index'
+import fetchCarMass from '../../../redux/thunks/fetchCarsMass'
 
 const AdminListCarsComponent: React.FC = () => {
-  const { handlePageChange, totalPage, carsSizePage, currentPage } =
-    useCarMassPagination()
+  const { carsSizePage, currentPage, handlePageChange, totalPage } =
+    usePagination({
+      fetchFunction: fetchCarMass,
+      carsSizePage: 3,
+    })
 
   return (
     <div className="adminCenterMain">
