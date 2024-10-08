@@ -1,11 +1,5 @@
 import useAdminSkelet from './useAdminSkelet'
 import useAuthorization from './useAuthorization'
-import useCarDataPagination from './useCaDataPagination'
-import useCarMassPagination from './usePaginationCarsMass'
+import usePagination from './usePagination'
 
-export {
-  useAdminSkelet,
-  useAuthorization,
-  useCarDataPagination,
-  useCarMassPagination,
-}
+export { useAdminSkelet, useAuthorization, usePagination }

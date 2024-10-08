@@ -24,7 +24,7 @@ const AdminLineCar = () => {
             <p className="columnThreeTxt">{carLine.categoryId.name}</p>
           </div>
           <div className="columnFour">
-            <p className="columnFourTxt">{carLine.colors.join(', ')}</p>
+            <p className="columnFourTxt">{carLine.colors}</p>
           </div>
           <div className="columnFive">
             <p className="columnFiveTxt">{carLine.priceMin} рублей</p>

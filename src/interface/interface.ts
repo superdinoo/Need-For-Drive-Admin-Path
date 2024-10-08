@@ -130,3 +130,13 @@ export interface AdminPaginationProps {
   pageSize: number
   onChange: (page: number) => void
 }
+interface FetchFunctionArgs {
+  token: string
+  carsSizePage: number
+  currentPage: number
+}
+
+export interface PaginationOptions {
+  fetchFunction: (args: FetchFunctionArgs) => void
+  carsSizePage: number
+}
