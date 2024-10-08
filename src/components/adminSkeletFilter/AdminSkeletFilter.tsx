@@ -3,16 +3,20 @@ import './AdminSkeletFilter.scss'
 import { TbArrowsMoveVertical } from 'react-icons/tb'
 import { AdminSkelet, CarApi } from '../../interface/interface'
 import { useSelector } from 'react-redux'
-import useAdminSkelet from './useAdminSkelet'
+import { useAdminSkelet } from '../hooks/index'
 import {
   selectButtonFilter,
   selectOrdersCar,
 } from '../adminOrder/adminOrderComponent/adminCenterOrders/adminCenterInfoCar/selectorsOrdersCars'
 import AdminSkeletFilterButton from './AdminSkeletFilterButton'
 import classNames from 'classnames'
+import { useLocation } from 'react-router-dom'
+import { selectCarsMass } from '../adminListCars/adminListCarsComponent/selectorsCarsMass'
 
 const AdminSkeletFilter: React.FC<AdminSkelet> = ({ items }) => {
+  const location = useLocation()
   const dataCars = useSelector(selectOrdersCar)
+  const dataCarsMass = useSelector(selectCarsMass)
   const [fixColor, setFixColor] = useState<string | string>('')
   const { reset } = useSelector(selectButtonFilter)
   const { clickList, handleClickList, handleClickFilterCars } = useAdminSkelet()
@@ -22,12 +26,19 @@ const AdminSkeletFilter: React.FC<AdminSkelet> = ({ items }) => {
   }
 
   const renderClickListContent = (itemName: string) => {
-    return dataCars.map((dataCar: CarApi) => {
+    const dataCarsToRender =
+      location.pathname === '/ListCar' ? dataCarsMass : dataCars
+
+    return dataCarsToRender.map((dataCar: CarApi) => {
       let listText = ''
 
       switch (itemName) {
         case 'Название авто':
-          listText = dataCar.carId.name
+          listText =
+            location.pathname === '/ListCar' ? dataCar.name : dataCar.carId.name
+          break
+        case 'Категория':
+          listText = dataCar.categoryId.name
           break
         case 'Город':
           listText = dataCar.cityId.name
@@ -47,6 +58,7 @@ const AdminSkeletFilter: React.FC<AdminSkelet> = ({ items }) => {
           if (listText === null) {
             listText = 'Статус не определен'
           }
+          break
         default:
           listText = ''
       }
@@ -80,7 +92,11 @@ const AdminSkeletFilter: React.FC<AdminSkelet> = ({ items }) => {
                   onClick={() => handleClickList(item.id)}
                 />
               </div>
-              {clickList[item.id] && (
+              {clickList[
+                location.pathname === '/ListCar'
+                  ? 'carsMassClick'
+                  : 'carDataClick'
+              ][item.id] && (
                 <div className="clickListOpen">
                   {renderClickListContent(item.name)}
                 </div>

@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import { setButtonFilter } from '../../redux/reducers/apiOrderData'
-import useAdminSkelet from './useAdminSkelet'
+import { useAdminSkelet } from '../hooks/index'
 
 const AdminSkeletFilterButton: React.FC = () => {
   const dispatch = useDispatch()

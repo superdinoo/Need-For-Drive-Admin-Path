@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import classNames from 'classnames'
-import adminBtn from '../AdminBtn'
+import { adminBtn } from '../constants'
 import { Link } from 'react-router-dom'
 
 const AdminMenuLeftLine = () => {
@@ -8,13 +8,10 @@ const AdminMenuLeftLine = () => {
 
   const handleActiveCart = (id: number) => {
     setActiveCart((prevBtns) => {
-      const updatedAdminBtn = prevBtns.map((blockBtn) => {
-        if (blockBtn.id === id) {
-          return { ...blockBtn, isActive: true }
-        }
-
-        return { ...blockBtn, isActive: false }
-      })
+      const updatedAdminBtn = prevBtns.map((blockBtn) => ({
+        ...blockBtn,
+        isActive: blockBtn.id === id,
+      }))
 
       return updatedAdminBtn
     })

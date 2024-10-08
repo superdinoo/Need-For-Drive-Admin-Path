@@ -1,8 +1,7 @@
 import { AdminInfoCarOptionsProps } from 'interface/interface'
-
 const { format } = require('date-fns')
 
-const adminDateFrom = ({
+export const adminDateFrom = ({
   dataCars,
 }: {
   dataCars: AdminInfoCarOptionsProps
@@ -18,5 +17,3 @@ const adminDateFrom = ({
 
   return { start, end }
 }
-
-export default adminDateFrom

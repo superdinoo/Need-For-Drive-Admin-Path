@@ -1,0 +1,48 @@
+.adminListCenterBtnContainer {
+  width: 210px;
+  height: 29px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.adminListCenterFirstBtn,
+.adminListCenterSecondBtn {
+  width: 95px;
+  height: 100%;
+}
+
+.adminFirstBtnCenter,
+.adminSecondBtnCenter {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(196, 24, 60, 1);
+  border: 0.5px solid rgba(196, 24, 60, 1);
+  border-radius: 7px;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  font-family: 'Helvetica';
+  font-size: 11px;
+  font-weight: 400;
+}
+.adminSecondBtnCenter {
+  background-color: rgba(0, 123, 255, 1);
+  border: 0.5px solid rgba(0, 123, 255, 1);
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .adminListCenterBtnContainer {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: auto;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  .adminListCenterFirstBtn,
+  .adminListCenterSecondBtn {
+    width: 110px;
+    height: 29px;
+  }
+}
