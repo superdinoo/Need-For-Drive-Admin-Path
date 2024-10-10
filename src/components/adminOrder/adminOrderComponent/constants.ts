@@ -6,7 +6,7 @@ export const adminBtn = [
     img: BlogIcon,
     id: 1,
     isActive: false,
-    Path: '/Admin',
+    Path: '/AdminCart',
   },
   {
     name: 'Список авто',

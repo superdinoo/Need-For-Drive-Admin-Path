@@ -1,0 +1,49 @@
+.adminModalWindowMain {
+  width: 100%;
+  height: 42px;
+}
+.adminModalWindowMainFalse {
+  display: none;
+}
+.adminModalWindowContainer {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(14, 194, 97, 1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.adminModalLeftPath {
+  height: 15px;
+  display: flex;
+  align-items: center;
+  margin-left: 30px;
+  gap: 10px;
+}
+
+.compleated,
+.cross {
+  width: 11px;
+  height: 11px;
+}
+
+.adminModalRightPath {
+  margin-right: 30px;
+}
+
+.cross {
+  cursor: pointer;
+}
+
+.btnCross {
+  background-color: rgba(14, 194, 97, 1);
+  border: none;
+}
+
+.compleatedTextArea {
+  font-family: Helvetica;
+  font-size: 13px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+}

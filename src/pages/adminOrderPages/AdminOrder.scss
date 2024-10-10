@@ -8,11 +8,19 @@
   justify-content: space-between;
 }
 
+.adminContentError {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
 @media screen and (min-width: 320px) and (max-width: 767px) {
   .adminOrder {
     display: inline;
   }
-  .adminContent {
+  .adminContent,
+  .adminContentError {
     width: 100%;
   }
 }
@@ -21,7 +29,8 @@
   .adminOrder {
     width: 1023px;
   }
-  .adminContent {
+  .adminConten,
+  .adminContentError {
     width: 872px;
   }
 }
@@ -30,7 +39,8 @@
   .adminOrder {
     width: 1440px;
   }
-  .adminContent {
+  .adminContent,
+  .adminContentError {
     width: 1237px;
   }
 }
