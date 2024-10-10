@@ -7,6 +7,7 @@ const initialState = {
     reset: false,
     apply: false,
   },
+  carOne: [],
 }
 
 const apiOrderData = createSlice({
@@ -26,6 +27,7 @@ const apiOrderData = createSlice({
         filteredCarsData: action.payload,
       }
     },
+
     setButtonFilter: (state, action) => {
       return {
         ...state,
@@ -35,10 +37,16 @@ const apiOrderData = createSlice({
         },
       }
     },
+    setCarOne: (state, action) => {
+      return {
+        ...state,
+        carOne: action.payload,
+      }
+    },
   },
 })
 
-export const { setOrderData, setFilteredCarsData, setButtonFilter } =
+export const { setOrderData, setFilteredCarsData, setButtonFilter, setCarOne } =
   apiOrderData.actions
 
 export default apiOrderData.reducer

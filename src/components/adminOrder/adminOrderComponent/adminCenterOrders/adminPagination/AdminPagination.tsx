@@ -1,19 +1,21 @@
 import React from 'react'
 import './AdminPagination.scss'
 import { Pagination } from 'antd'
-import usePaginations from './usePaginations'
+import { AdminPaginationProps } from 'interface/interface'
 
-const AdminPagination: React.FC = () => {
-  const { carsSizePage, currentPage, handlePageChange, totalPage } =
-    usePaginations()
-
+const AdminPagination: React.FC<AdminPaginationProps> = ({
+  total,
+  current,
+  pageSize,
+  onChange,
+}) => {
   return (
     <div className="adminPaginationContainer">
       <Pagination
-        onChange={handlePageChange}
-        total={totalPage * carsSizePage}
-        current={currentPage}
-        pageSize={carsSizePage}
+        onChange={onChange}
+        total={total}
+        current={current}
+        pageSize={pageSize}
       />
     </div>
   )

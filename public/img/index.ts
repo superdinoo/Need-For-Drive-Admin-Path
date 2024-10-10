@@ -10,6 +10,8 @@ import Shape from './Shape.png'
 import BlogIcon from './Blog Icon.png'
 import Blog_Posts from './Blog Posts Icon.png'
 import New_Post from './Add New Post Icon.png'
+import Compleated from './Compleated.png'
+import Cross from './Cross.png'
 
 export {
   CheckIcon,
@@ -24,4 +26,6 @@ export {
   BlogIcon,
   Blog_Posts,
   New_Post,
+  Compleated,
+  Cross,
 }
