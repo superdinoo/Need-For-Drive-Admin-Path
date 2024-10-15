@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { setAuthorization } from '../../../redux/actions/setAuthorization'
-import getRegisterInfo from './selectRegister'
+import { setAuthorization } from '../../redux/actions/setAuthorization'
+import getRegisterInfo from '../authorizationComponent/authorizationRegister/selectRegister'
 
 const useAuthorization = () => {
   const { isFixData } = useSelector(getRegisterInfo)

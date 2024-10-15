@@ -6,6 +6,7 @@ import { ApiSwaggerState } from '../../interface/interface'
 const initialState: ApiSwaggerState = {
   token: [],
   orderCar: [],
+  carsMain: [],
   isLoading: false,
   error: null,
 }
@@ -18,6 +19,7 @@ const apiSwaggerSlice = createSlice({
     apiSwaggerPromise(fetchAuth, 'token')(builder)
     apiSwaggerPromise(fetchCarData, 'orderCar')(builder)
     apiSwaggerPromise(fetchLogAut, 'token')(builder)
+    apiSwaggerPromise(fetchCarMass, 'carsMain')(builder)
   },
 })
 

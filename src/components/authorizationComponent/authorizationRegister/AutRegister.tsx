@@ -1,6 +1,6 @@
 import React from 'react'
 import './AutRegister.scss'
-import useAuthorization from './useAuthorization'
+import { useAuthorization } from '../../hooks/index'
 import AutSkeletRegister from './AutSkeletRegister'
 import AutBtn from '../authorizationBtn/AutBtn'
 

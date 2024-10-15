@@ -1,15 +1,15 @@
 import { ActionReducerMapBuilder, AsyncThunk } from '@reduxjs/toolkit'
-import { OrderCar, RootState } from '../rootState'
+import { CarsMain, OrderCar, RootState } from '../rootState'
 import { ApiSwaggerState, Token } from '../../interface/interface'
 
 type ThunkType = AsyncThunk<
-  Token[] | OrderCar[],
+  Token[] | OrderCar[] | CarsMain,
   string | void | undefined,
   { state: RootState }
 >
 
 const apiSwaggerPromise =
-  (thunk: ThunkType, paramName: 'token' | 'orderCar') =>
+  (thunk: ThunkType, paramName: 'token' | 'orderCar' | 'carsMain') =>
   (builder: ActionReducerMapBuilder<ApiSwaggerState>) => {
     builder
       .addCase(thunk.pending, (state) => ({
