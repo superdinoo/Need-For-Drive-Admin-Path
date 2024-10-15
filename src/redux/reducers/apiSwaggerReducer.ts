@@ -2,6 +2,9 @@ import { createSlice } from '@reduxjs/toolkit'
 import apiSwaggerPromise from '../actions/apiSwaggerPromise'
 import fetchAuth from '../thunks/fetchAuth'
 import { ApiSwaggerState } from '../../interface/interface'
+import fetchCarData from '../thunks/fetchCarData'
+import fetchLogAut from '../thunks/fetchLogAut'
+import fetchCarMass from '../thunks/fetchCarsMass'
 
 const initialState: ApiSwaggerState = {
   token: [],

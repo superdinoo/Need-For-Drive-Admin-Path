@@ -44,7 +44,7 @@
 //button
 
 .adminListCenterBtnContainer {
-  width: 210px;
+  width: 270px;
   height: 29px;
   display: flex;
   align-items: center;
@@ -61,7 +61,8 @@
 
 .adminFirstBtnCenter,
 .adminSecondBtnCenter,
-.buttonListFilterCar {
+.buttonListFilterCar,
+.adminThirdBtnCenter {
   width: 100%;
   height: 100%;
   background-color: rgba(196, 24, 60, 1);
@@ -82,6 +83,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.adminThirdBtnCenter {
+  width: 100%;
+  height: 29px;
+  background-color: rgb(201, 201, 201);
+  border: 0.5px solid rgb(201, 201, 201);
 }
 .clickListOpen {
   width: auto;

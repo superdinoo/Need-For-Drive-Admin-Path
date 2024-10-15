@@ -22,11 +22,15 @@
 .columnOne,
 .columnTwo,
 .columnThree,
-.columnFour,
-.columnFive {
+.columnFour {
   display: flex;
   align-items: center;
   flex-direction: column;
+}
+.columnFive {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .columnOneHeader,
@@ -59,6 +63,18 @@
 .columnFourTxt {
   display: flex;
   flex-direction: column;
+}
+
+.settingColumn {
+  width: 30px;
+  height: 30px;
+}
+.settingColumnButton {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  border: none;
+  cursor: pointer;
 }
 
 @media screen and (min-width: 320px) and (max-width: 767px) {

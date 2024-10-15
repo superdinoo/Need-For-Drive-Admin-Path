@@ -1,4 +1,4 @@
-import { OrderApiPost } from 'interface/interface'
+import { CarApi, OrderApiPost } from 'interface/interface'
 import store from './Store'
 
 export type FormRegister = {
@@ -11,10 +11,19 @@ export type Token = {
 }
 export type OrderCar = {
   orderCar: OrderApiPost[]
+  carOne: CarApi
 }
 
 export type CarsMain = {
   carsMain: OrderApiPost[]
+}
+
+export type InputCarCart = {
+  model: string
+  descriptions: string
+  typeAuto: string
+  color: string
+  file: {}
 }
 
 export type RootState = ReturnType<typeof store.getState>
