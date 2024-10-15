@@ -11,7 +11,7 @@
     "stylelint": "stylelint /.scss",
     "precommit": "lint-staged",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build -b master"
   },
   "keywords": [],
   "author": "",
