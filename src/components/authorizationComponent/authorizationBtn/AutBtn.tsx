@@ -19,8 +19,6 @@ const AutBtn: React.FC = () => {
 
   const data = useSelector(selectFixData)
 
-  console.log(data)
-
   useEffect(() => {
     if (
       data.eMail.length > 0 &&
@@ -34,7 +32,7 @@ const AutBtn: React.FC = () => {
   const handleLogin = () => {
     try {
       dispatch(fixData())
-      if (token) navigate('/Admin')
+      if (token) navigate('/ListCar')
     } catch (error) {
       console.error('Токен не получен')
     }

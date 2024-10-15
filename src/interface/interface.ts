@@ -131,17 +131,6 @@ export interface AdminPaginationProps {
   pageSize: number
   onChange: (page: number) => void
 }
-<<<<<<< HEAD
-interface FetchFunctionArgs {
-  token: string
-  carsSizePage: number
-  currentPage: number
-}
-
-export interface PaginationOptions {
-  fetchFunction: (args: FetchFunctionArgs) => void
-  carsSizePage: number
-=======
 
 export interface DataSkelet {
   title: string
@@ -162,5 +151,35 @@ export interface InputCarCart {
 
 export interface ButtonSkelet {
   name: string
->>>>>>> v10
+}
+interface FetchFunctionArgs {
+  token: string
+  carsSizePage: number
+  currentPage: number
+}
+
+export interface PaginationOptions {
+  fetchFunction: (args: FetchFunctionArgs) => void
+  carsSizePage: number
+}
+
+export interface DataSkelet {
+  title: string
+  placeholder: string
+  name: string
+  value: string
+  onChange: (word: string) => void
+  type: string
+}
+
+export interface InputCarCart {
+  selectedFile: {}
+  description: string
+  model: string
+  typeAuto: string
+  color: string
+}
+
+export interface ButtonSkelet {
+  name: string
 }

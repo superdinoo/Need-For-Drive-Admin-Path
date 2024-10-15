@@ -1,0 +1,68 @@
+.adminErrorMain {
+  width: 473px;
+  height: 200px;
+}
+.adminErrorContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.adminErrorNumber {
+  font-family: Roboto;
+  font-size: 75px;
+  font-weight: 500;
+  color: rgba(202, 206, 219, 1);
+  margin: 0;
+}
+.adminErrorText,
+.adminErrorRestarte,
+.bntError {
+  font-family: Helvetica;
+  font-size: 50px;
+  font-weight: 400;
+  color: rgba(61, 81, 112, 1);
+  margin: 0;
+}
+
+.adminErrorRestarte {
+  font-size: 20px;
+  color: rgba(129, 142, 163, 1);
+  margin-bottom: 20px;
+  text-align: center;
+}
+.buttonErrorMain {
+  width: 95px;
+  height: 29px;
+}
+.bntError {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 123, 255, 1);
+  border: 0.5px solid rgba(0, 123, 255, 1);
+  border-radius: 4px;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 1);
+  cursor: pointer;
+
+  &:hover {
+    transition: all 0.5s ease;
+    background-color: rgb(1, 101, 209);
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .adminErrorMain {
+    width: 300px;
+    height: auto;
+  }
+
+  .adminErrorNumber {
+    font-size: 50px;
+  }
+  .adminErrorText,
+  .adminErrorRestarte {
+    font-size: 30px;
+  }
+}

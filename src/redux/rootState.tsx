@@ -25,5 +25,15 @@ export type InputCarCart = {
   color: string
   file: {}
 }
+export type ApiSwagger = {
+  error: string
+}
+export type ApiSwaggerState = {
+  token: Token
+  orderCar: OrderCar
+  carsMain: CarsMain
+  isLoading: boolean
+  error: string
+}
 
 export type RootState = ReturnType<typeof store.getState>
