@@ -1,7 +1,6 @@
 {
   "name": "simbirsoftadmin",
-  "homepage": "https://superdinoo.github.io/Need-For-Drive-Admin-Path",
-  "deploy": "gh-pages -d build -b gh-pages",
+  "homepage": "https://superdinoo.github.io/Need-For-Drive-Admin-Path/",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,7 +10,8 @@
     "lint": "eslint src//.{ts,tsx,js,jsx} --fix",
     "stylelint": "stylelint /.scss",
     "precommit": "lint-staged",
-    "postdeploy": "mv build/index.html ."
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "keywords": [],
   "author": "",
